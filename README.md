@@ -11,8 +11,8 @@
 
 
 ### 使用三步骤
-+ 引用`./css/roleStyle.css`css文件
-+ 引用`./script/createRole.js`
++ 引用CSS`./css/roleStyle.css`
++ 引用JS`./script/createRole.js`
 + 添加`<div class="permissionsOfDetails"></div>`
 
 ```
