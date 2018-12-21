@@ -7,7 +7,7 @@
 
 ### 界面
 ![Image text](https://github.com/zyTheGit/role/blob/master/img/role.jpg)
-![Image text](https://github.com/zyTheGit/role/blob/master/img/rolepage.png)
+![Image text](https://github.com/zyTheGit/role/blob/master/img/rolePage.png)
 
 
 ### 使用三步骤
