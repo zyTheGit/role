@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/roleStyle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/roleStyle.css" />
     <title>role</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="permissionsOfDetails"></div>
-    <!-- <script src="./script/jquery-1.10.2.min.js"></script> -->
     <script src="./script/createRole.js"></script>
     <script>
-        //第一种方式，将json文件单独一个文件
-        // $.getJSON("./roleShow.json", function (valueArryParse) {
-        //     var json = {
-        //         parent: ".permissionsOfDetails",
-        //         Value: valueArryParse
-        //     }
-        //     addAccessLabels(JSON.stringify(json));
-        // })
+      //第一种方式，将json文件单独一个文件
+      fetch("./roleShow.json")
+        .then(response => response.json())
+        .then(data => {
+          let json = {
+            parent: ".permissionsOfDetails",
+            Value: data
+          };
+          addAccessLabels(JSON.stringify(json));
+        })
+        .catch(e => {
+          console.log(e);
+        });
 
-        //第二种方式
-        var json = {
-                parent: ".permissionsOfDetails",
-                Value: [{
-                    "elementChieseName": "基本设置",
-                    "jurisdictionName": [
+      //第二种方式
+      // var json = {
+      //         parent: ".permissionsOfDetails",
+      //         Value: [{
+      //             "elementChieseName": "基本设置",
+      //             "jurisdictionName": [
 
-                        {
-                            "englishNa": "setMeal-edit",
-                            "chineseNa": "套餐编辑"
-                        },
-                        {
-                            "englishNa": "setMeal-del",
-                            "chineseNa": "套餐删除"
-                        }
-                    ]
-                },
-                {
-                    "elementChieseName": "权限",
-                    "jurisdictionName": [
+      //                 {
+      //                     "englishNa": "setMeal-edit",
+      //                     "chineseNa": "套餐编辑"
+      //                 },
+      //                 {
+      //                     "englishNa": "setMeal-del",
+      //                     "chineseNa": "套餐删除"
+      //                 }
+      //             ]
+      //         },
+      //         {
+      //             "elementChieseName": "权限",
+      //             "jurisdictionName": [
 
-                        {
-                            "englishNa": "role-edit",
-                            "chineseNa": "权限编辑"
-                        },
-                        {
-                            "englishNa": "role-del",
-                            "chineseNa": "权限删除"
-                        }
-                    ]
-                }]}
-        addAccessLabels(JSON.stringify(json));
+      //                 {
+      //                     "englishNa": "role-edit",
+      //                     "chineseNa": "权限编辑"
+      //                 },
+      //                 {
+      //                     "englishNa": "role-del",
+      //                     "chineseNa": "权限删除"
+      //                 }
+      //             ]
+      //         }]}
+      // addAccessLabels(JSON.stringify(json));
     </script>
-</body>
-
+  </body>
 </html>
